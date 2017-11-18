@@ -13,9 +13,13 @@ class MigracionRepuestos extends Migration
      */
     public function up()
     {
-        Schema::create('migraciontRepuestos', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('tRepuestos', function (Blueprint $table) {
+            $table->increments('id', 100);
+            $table->string('nombre', 100);
+            $table->string('costo_Unidad', 100);
+            $table->string('descripcion', 400);
             $table->timestamps();
+           // $table->primary('id');
         });
     }
 

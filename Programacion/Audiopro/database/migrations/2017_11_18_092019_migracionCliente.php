@@ -13,9 +13,12 @@ class MigracionCliente extends Migration
      */
     public function up()
     {
-        Schema::create('migraciontCliente', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nombre_completo');
+        Schema::create('tCliente', function (Blueprint $table) {
+            //$table->increments('id');
+            $table->string('cedula', 100);
+            $table->string('nombre_Completo', 100);
+            $table->string('telefono_Contacto', 10);
+            $table->primary('cedula');
             $table->timestamps();
         });
     }

@@ -13,9 +13,23 @@ class MigracionOrden extends Migration
      */
     public function up()
     {
-        Schema::create('migraciontOrden', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('tOrden', function (Blueprint $table) {
+            $table->increments('id', 100);
+            $table->date('fecha_Inicio_Diagnostico');
+            $table->date('fecha_Fin_Diagnostico');
+            $table->date('fecha_Inicio_Reparacion');
+            $table->date('fecha_Fin_Reparacion');
+            $table->string('novedades', 500);
+            $table->string('cedula_Cliente', 100);
+            $table->foreign('cedula_Cliente')->references('cedula')->on('tCliente');
+           // $table->string('marca_Articulo', 100);
+           // $table->string('modelo_Articulo', 10);
+           // $table->foreign('marca_Articulo')->references('marca')->on('tArticulo');
+            //$table->foreign('modelo_Articulo')->references('modelo')->on('tArticulo');
+            //$table->integer('id_Lista_Repuestos', 100)->unsigned();;
+            //$table->foreign('id_Lista_Repuestos')->references('id')->on('tListaRespuestos');
             $table->timestamps();
+           // $table->primary('id');
         });
     }
 

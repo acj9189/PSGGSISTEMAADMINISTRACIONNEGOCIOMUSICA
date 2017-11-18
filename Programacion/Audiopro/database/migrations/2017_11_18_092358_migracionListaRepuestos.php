@@ -13,9 +13,11 @@ class MigracionListaRepuestos extends Migration
      */
     public function up()
     {
-        Schema::create('migraciontListaRespuestos', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('tListaRespuestos', function (Blueprint $table) {
+            $table->integer('id',100);
+           // $table->primary('id');
             $table->timestamps();
+
         });
     }
 

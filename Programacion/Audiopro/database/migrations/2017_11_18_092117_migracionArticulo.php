@@ -13,8 +13,14 @@ class MigracionArticulo extends Migration
      */
     public function up()
     {
-        Schema::create('migraciontArticulo', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('tArticulo', function (Blueprint $table) {
+            //$table->increments('id');
+            $table->integer('numero_Serie', 100);
+            $table->string('marca', 100);
+            $table->string('modelo', 10);
+            $table->string('estado', 10);
+           // $table->primary(['marca','modelo']);
+            //$table->primary('marca');
             $table->timestamps();
         });
     }
