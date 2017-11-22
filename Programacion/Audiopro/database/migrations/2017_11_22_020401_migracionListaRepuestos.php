@@ -13,11 +13,11 @@ class MigracionListaRepuestos extends Migration
      */
     public function up()
     {
-        Schema::create('tListaRespuestos', function (Blueprint $table) {
-            $table->integer('id',100);
-           // $table->primary('id');
-            $table->timestamps();
+        Schema::create('tListaRepuestos', function (Blueprint $table) {
 
+            $table->increments('idLR');
+            $table->string('lista_Repuestos'); // concatenacion de todos los repuestos...
+            $table->timestamps();
         });
     }
 
@@ -28,6 +28,6 @@ class MigracionListaRepuestos extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('migraciontListaRespuestos');
+        Schema::dropIfExists('tListaRepuestos');
     }
 }
