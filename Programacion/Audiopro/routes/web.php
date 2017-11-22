@@ -23,6 +23,10 @@ Route::get('EntradaArticulo', function () {
     return view('paginas.EntradaArticulo');
 });
 
+Route::get('EntradaArticulo', function () {
+    return view('paginas.EntradaArticulo');
+});
+
 Route::get('SalidaArticulo', function () {
     return view('paginas.SalidaArticulo');
 });
@@ -30,3 +34,8 @@ Route::get('SalidaArticulo', function () {
 Route::get('ordenServicio', function () {
 	return view('layouts.ordenServicio');
 });
+
+///rutas para ingresar articulo
+Route::get('layouts/{cc}', 'consultaCliente@consultaCliente');
+Route::get('/layouts/orden', 'RegistraEntradaArticulo@insert');
+Route::post('layouts', 'RegistraEntradaArticulo@insert'); 
