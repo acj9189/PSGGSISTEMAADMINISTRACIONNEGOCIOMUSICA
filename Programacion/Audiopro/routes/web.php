@@ -1,40 +1,25 @@
 <?php
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-
-
-Route::group('',function(){
-
-});*/
-
-Route::get('/', function(){
-	return view('welcome');
+Route::get('/', function () {
+    return view('welcome');
 });
-
 Route::get('EntradaArticulo', function () {
     return view('paginas.EntradaArticulo');
 });
-
-Route::get('EntradaArticulo', function () {
-    return view('paginas.EntradaArticulo');
-});
-
 Route::get('SalidaArticulo', function () {
     return view('paginas.SalidaArticulo');
 });
-
 Route::get('ordenServicio', function () {
 	return view('layouts.ordenServicio');
 });
-
+Route::get('consultar', function () {
+	return view('paginas.consultar_articulos');
+});
+Route::get('consultar/diagnosticar', function () {
+	return view('paginas.diagnosticar');
+});
+Route::get('consultar/detalles', function () {
+	return view('paginas.detalles');
+});
 ///rutas para ingresar articulo
 Route::get('layouts/{cc}', 'consultaCliente@consultaCliente');
 Route::get('/layouts/orden', 'RegistraEntradaArticulo@insert');
