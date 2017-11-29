@@ -1,26 +1,40 @@
 <?php
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
 Route::get('/', function () {
-    return view('welcome');
+	return view('welcome');
 });
 Route::get('EntradaArticulo', function () {
-    return view('paginas.EntradaArticulo');
+	return view('paginas.EntradaArticulo');
 });
 Route::get('SalidaArticulo', function () {
-    return view('paginas.SalidaArticulo');
+	return view('paginas.SalidaArticulo');
 });
 Route::get('ordenServicio', function () {
 	return view('layouts.ordenServicio');
 });
-Route::get('consultar', function () {
-	return view('paginas.consultar_articulos');
-});
-Route::get('consultar/diagnosticar', function () {
-	return view('paginas.diagnosticar');
-});
-Route::get('consultar/detalles', function () {
-	return view('paginas.detalles');
-});
-///rutas para ingresar articulo
+
+//rutas en consultar
+Route::get('consultar', 'consultarArticulo@mostrar');
+	//detalles;
+Route::get('consultar/detalles/{id}/{estado?}','detallesArticulo@index');
+	//diagnosticar
+Route::get('consultar/diagnosticar/{id}/{estado?}','diagnosticarArticulo@index');
+Route::post('consultar/diagnosticar/{id}','diagnosticarArticulo@insert');
+	//reparar
+Route::get('consultar/reparar/{id}/{estado?}','reparar@index');
+Route::post('consultar/reparar/{id}','reparar@insert');
+
 Route::get('layouts/{cc}', 'consultaCliente@consultaCliente');
 Route::get('/layouts/orden', 'RegistraEntradaArticulo@insert');
 Route::post('layouts', 'RegistraEntradaArticulo@insert'); 
