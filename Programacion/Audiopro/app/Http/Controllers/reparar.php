@@ -9,9 +9,16 @@ class reparar extends Controller
 {
 	public function index(Request $request,$id,$estado = null){
 		if(!$estado){
-			$articulo = \DB::table('tarticulo')->select('*')->
-			where('ida','=',$id)->get();
+			$articulo = \DB::table('torden')->join('tarticulo','torden.idArticulo','=','tarticulo.idA')->
+			join('tcliente','torden.idCliente','=','tcliente.idC')->select('*')-> where('idArticulo','=',$id)->get();
 			return view('paginas.reparar')->with('articulo', $articulo);
+		}
+		else{
+			\DB::table('tarticulo')->where('ida','=',$id)->update(['estado' => $estado]);
+			\DB::table('torden')->where('idArticulo','=',$id)->update(['fecha_Inicio_reparacion' =>date("y/m/j")]);
+			$orden = \DB::table('torden')->join('tarticulo','torden.idArticulo','=','tarticulo.idA')->
+			join('tcliente','torden.idCliente','=','tcliente.idC')->select('*')-> where('idArticulo','=',$id)->get();
+			return view('paginas.detalles')->with('orden', $orden);
 		}
 		
 
@@ -21,8 +28,8 @@ class reparar extends Controller
 			'descripcion' => 'required',
 		]);
 		
-		\DB::table('tarticulo')->where('ida','=',$id)->update(['descripcion' =>$request->input('descripcion')]);
-		\DB::table('tarticulo')->where('ida','=',$id)->update(['fecha_salida' =>date("y/m/j")]);
+		\DB::table('torden')->where('idArticulo','=',$id)->update(['descripcion_Diagnostico' =>$request->input('descripcion')]);
+		\DB::table('torden')->where('idArticulo','=',$id)->update(['fecha_Fin_reparacion' =>date("y/m/j")]);
 		\DB::table('tarticulo')->where('ida','=',$id)->update(['estado' => 5]);
 		$articulo = \DB::table('tarticulo')->get();
 		return view('paginas.consultar_articulos')->with('articulos', $articulo);
