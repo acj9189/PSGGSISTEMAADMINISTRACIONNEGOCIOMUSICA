@@ -19,10 +19,10 @@
   @foreach ($articulos as $aux)
       @if($aux->estado == 0)
         <tr>
-          <td style="padding-left: 80px"><a href="http://localhost/prueba2/public/consultar/detalles/{{{$aux->idA}}}" style="">{{$aux->idA}}</a></td>
+          <td style="padding-left: 80px"><a href="http://localhost/Audiopro/public/consultar/detalles/{{{$aux->idA}}}" style="">{{$aux->idA}}</a></td>
           <td style="padding-left: 80px">{{$aux->marca}}</td>
           <td style="padding-left: 80px">{{$aux->modelo}}</td>
-          <td><form action="http://localhost/prueba2/public/consultar/detalles/{{{$aux->idA}}}/1"> <input type="submit" value="Revisar"" /> </form></td>
+          <td><form action="http://localhost/Audiopro/public/consultar/detalles/{{{$aux->idA}}}/1"> <input type="submit" value="Revisar"" /> </form></td>
         </tr>
         </tr>
       @endif
@@ -43,10 +43,10 @@
         @foreach ($articulos as $aux)
       @if($aux->estado == 1)
         <tr>
-           <td style="padding-left: 80px"><a href="http://localhost/prueba2/public/consultar/detalles/{{{$aux->idA}}}" style="">{{$aux->idA}}</a></td>
+           <td style="padding-left: 80px"><a href="http://localhost/Audiopro/public/consultar/detalles/{{{$aux->idA}}}" style="">{{$aux->idA}}</a></td>
           <td style="padding-left: 80px"><h6>{{$aux->marca}}</h6></td>
           <td style="padding-left: 80px"><h6>{{$aux->modelo}}</h6></td>
-          <td><form action="http://localhost/prueba2/public/consultar/diagnosticar/{{{$aux->idA}}}"> <input type="submit" value="Diagnosticar" /> </form></td>
+          <td><form action="http://localhost/Audiopro/public/consultar/diagnosticar/{{{$aux->idA}}}"> <input type="submit" value="Diagnosticar" /> </form></td>
         </tr>
       @endif
   @endforeach
@@ -65,10 +65,10 @@
         @foreach ($articulos as $aux)
       @if($aux->estado == 3)
         <tr>
-           <td style="padding-left: 80px"><a href="http://localhost/prueba2/public/consultar/detalles/{{{$aux->idA}}}" style="">{{$aux->idA}}</a></td>
+           <td style="padding-left: 80px"><a href="http://localhost/Audiopro/public/consultar/detalles/{{{$aux->idA}}}" style="">{{$aux->idA}}</a></td>
           <td style="padding-left: 80px"><h6>{{$aux->marca}}</h6></td>
           <td style="padding-left: 80px"><h6>{{$aux->modelo}}</h6></td>
-          <td><form action="http://localhost/prueba2/public/consultar/detalles/{{{$aux->idA}}}/4"> <input type="submit" value="reparar" /></form></td>
+          <td><form action="http://localhost/Audiopro/public/consultar/reparar/{{{$aux->idA}}}/4"> <input type="submit" value="reparar" /></form></td>
         </tr>
       @endif
   @endforeach
@@ -88,10 +88,10 @@
             @foreach ($articulos as $aux)
       @if($aux->estado == 4)
         <tr>
-           <td style="padding-left: 80px"><a href="http://localhost/prueba2/public/consultar/detalles/{{{$aux->idA}}}" style="">{{$aux->idA}}</a></td>
+           <td style="padding-left: 80px"><a href="http://localhost/Audiopro/public/consultar/detalles/{{{$aux->idA}}}" style="">{{$aux->idA}}</a></td>
           <td style="padding-left: 80px"><h6>{{$aux->marca}}</h6></td>
           <td style="padding-left: 80px"><h6>{{$aux->modelo}}</h6></td>
-          <td><form action="http://localhost/prueba2/public/consultar/reparar/{{{$aux->idA}}}"> <input type="submit" value="reparar" /></form></td>
+          <td><form action="http://localhost/Audiopro/public/consultar/reparar/{{{$aux->idA}}}"> <input type="submit" value="reparar" /></form></td>
         </tr>
       @endif
   @endforeach

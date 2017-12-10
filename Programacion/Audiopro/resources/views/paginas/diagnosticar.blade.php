@@ -44,7 +44,7 @@
           <td><input type="text" name="costo" id = "costo"></td>
         </tr>
         <tr >
-         <td><input type="button" onClick="document.location = 'http://localhost/prueba2/public/consultar'" name="cancelar" value="cancelar"></td>
+         <td><input type="button" onClick="document.location = 'http://localhost/Audiopro/public/consultar'" name="cancelar" value="cancelar"></td>
          <td><input type="submit" name="Diagnosticar" value="Diagnosticar" ></td>
          <td><input type="hidden" name="_token" value="{{ csrf_token() }}"/></td>
        </tr>
