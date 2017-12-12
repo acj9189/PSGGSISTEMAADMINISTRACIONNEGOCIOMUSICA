@@ -42,6 +42,6 @@ class RegistraEntradaArticulo extends Controller
 
  		$articulo->save();
 
-   	return view('layouts.ordenServicio');
+   	return view('paginas.crearCliente');
    }
 }

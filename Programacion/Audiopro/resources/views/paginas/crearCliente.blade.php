@@ -17,25 +17,27 @@
       <tr>
         <td><h6 size="10">Nombres:</h6></td>
         <td>
-          <input type="text" id="name" name="name" size="30" value="{{$names}}">{{csrf_token()}}
+          <input type="text" name="names" size="30" >
+
         </td>
       </tr>
       <tr>
         <td ><h6 size="10">Apellidos:</h6></td>
-        <td><input type="text" id="ape" name="ape" size="30" value="{{$lastnames}}"></td>
+        <td><input type="text" name="lastnames" size="30" ></td>
       </tr>
       <tr>
         <td ><h6 size="10">Teléfono:</h6></td>
-        <td><input type="text" id="tel" name="tel" size="30" value="{{$phonenumber}}"></td>
+        <td><input type="text" name="phonenumber" size="30" ></td>
       </tr>
       <tr>
         <td ><h6 size="10">email:</h6></td>
-        <td><input type="email" id="email" name="email" size="30" value="{{$email}}"></td>
+        <td><input type="email" name="email" size="30" ></td>
       </tr>
+      {{csrf_field()}}
     </table>
 
     <div class="col-xs-5" style="text-align:center" >
-      <button type="submit" id="guardar" name="guardar" ><a rel=alternate media=print> Ingresar Cliente</a></button>
+      <button type="submit" name="save" ><a rel=alternate media=print> Ingresar Cliente</a></button>
 
     </div>
   </form>

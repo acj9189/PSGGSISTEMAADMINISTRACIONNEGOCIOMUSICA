@@ -14,10 +14,10 @@
 Route::get('/', function () {
 	return view('welcome');
 });
-Route::get('EntradaArticulo', function () {
+Route::get('entradaArticulo', function () {
 	return view('paginas.EntradaArticulo');
 });
-Route::get('SalidaArticulo', function () {
+Route::get('salidaArticulo', function () {
 	return view('paginas.SalidaArticulo');
 });
 Route::get('ordenServicio', function () {
