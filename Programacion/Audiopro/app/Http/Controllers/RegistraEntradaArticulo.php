@@ -12,19 +12,19 @@ use Illuminate\Http\Request;
 class RegistraEntradaArticulo extends Controller
 {
 
-	
+
    public function insert(Request $request){
- 		
+
    		$this->validate($request, [
    			'cc' => 'required',
-   			'numero_Serie' => 'required',
-   			'nombre' => 'required',
-   			'marca' => 'required',
-   			'modelo' => 'required',
+   			'nombres' => 'required',
+            'apellidos' => 'required',
+   			'telefono' => 'required',
+   			'email' => 'required',
    			'reporte' => 'required',
    		]);
 
- 		$articulo= new articulo;
+ 		$articulo = new articulo;
 
  		$articulo->numero_Serie = $request->input('numero_Serie');
  		$articulo->nombre= $request->input('nombre');
@@ -32,12 +32,12 @@ class RegistraEntradaArticulo extends Controller
  		$articulo->modelo = $request->input('modelo');
  		$articulo->estado='Recibido';
  		$articulo->tipoServicio = $request->input('tipoServicio');
- 		if($articulo->tipoServicio=='on'){
+ 		if($articulo->tipoServicio =='on'){
 
- 			$articulo->tipoServicio='garantia';
+ 			$articulo->tipoServicio = 'garantia';
  		}
  		else{
- 			$articulo->tipoServicio='reparación';
+ 			$articulo->tipoServicio = 'reparación';
  		}
 
  		$articulo->save();

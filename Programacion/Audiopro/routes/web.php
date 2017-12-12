@@ -24,6 +24,13 @@ Route::get('ordenServicio', function () {
 	return view('layouts.ordenServicio');
 });
 
+Route::get('crearCliente', function () {
+	return view('paginas.crearCliente');
+	//echo "Crear cliente";
+});
+
+//Route::resource('crearCliente','crearCliente');
+Route::match(["get", "post"],'crearClienteI','crearCliente@insertar');
 //rutas en consultar
 Route::get('consultar', 'consultarArticulo@mostrar');
 	//detalles;
@@ -37,4 +44,4 @@ Route::post('consultar/reparar/{id}','reparar@insert');
 
 Route::get('layouts/{cc}', 'consultaCliente@consultaCliente');
 Route::get('/layouts/orden', 'RegistraEntradaArticulo@insert');
-Route::post('layouts', 'RegistraEntradaArticulo@insert'); 
+Route::post('layouts', 'RegistraEntradaArticulo@insert');
