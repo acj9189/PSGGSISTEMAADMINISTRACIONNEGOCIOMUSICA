@@ -10,7 +10,7 @@
 <link href="{{ asset('css/estilo.css')}}" type="text/css" rel="stylesheet">
 <link href="{{ asset ('boostrap3/css/bootstrap.css')}}" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="{{ asset('imagenes/icono.png')}}" rel="icon">  
+<link href="{{ asset('imagenes/icono.png')}}" rel="icon">
 @yield('head')
 
 </head>
@@ -34,9 +34,7 @@
 <td class="opciones1">   </td>
 <td class="opciones1">   </td>
 <td class="opciones1"><h6 class="letralink">Usuario:  </h6></td>
-<td ><h6 class="letralink"> ?php session_start();
-$user=$_SESSION['usuario'];
-echo $user; ? </h6></td>
+<td ><h6 class="letralink"></h6></td>
 <td class="opciones1">
 <h6 class="letraIngreso">
 <button name="cerrar" id="cerrar" >Cerrar</button></h6>     </td>
@@ -54,7 +52,7 @@ echo $user; ? </h6></td>
 
 <div class="col-xs-3">
 <div id="wrapper">
- 
+
     <ul class="menu">
         <li class="item1"><a href="#">Entrada - Artículo </a>
             <ul>
@@ -62,36 +60,36 @@ echo $user; ? </h6></td>
                   <li class="subitem1"><a href="../vistas/ordenConsulta.php" >Consultar Entradas</a></li>
                   <li class="subitem1"><a href="#">Eliminar Entradas</a></li>
                   <li class="subitem1"><a href="#">Modificar Entrada</a></li>
-                
+
             </ul>
         </li>
         <li class="item1"><a href="#">Salida -  Artículo</a>
             <ul>
-                  <li class="subitem1"><a href="{{ asset('SalidaArticulo')}}">Registrar salida</a></li>
+                  <li class="subitem1"><a href="{{ asset('SalidaArticulo') }}">Registrar salida</a></li>
                    <li class="subitem1"><a href="#" >Consultar salidas</a></li>
                   <li class="subitem1"><a href="#">Eliminar salida</a></li>
-                                   
-                
+
+
             </ul>
         </li>
-        
+
         <li class="item1"><a href="#">Cliente</a>
             <ul>
-            	<li class="subitem1"><a  href="">Nuevo Cliente</a></li>
-                                
-                
+            	<li class="subitem1"><a  href="{{ asset('crearCliente') }}">Nuevo Cliente</a></li>
+
+
             </ul>
         </li>
         <li class="item1"><a href="#">Cobros</a>
             <ul>
             	<li class="subitem1"><a  href="" target="f1">Consultar Cobros</a></li>
-                
+
             </ul>
         </li>
         </li>
-       
+
     </ul>
- 
+
 </div>
 </div>
 <div class="col-xs-9 tamiframe">
@@ -103,7 +101,7 @@ echo $user; ? </h6></td>
 </section>
 </div>
 <footer class="footer">
-<div class="col-xs-6 derechos"> 
+<div class="col-xs-6 derechos">
 <img src="{{ asset('imagenes/LogoYamahaMusical.png') }}" width="130" height="50">
 <h6 class="letralink">Servicio Autorizado</h6>
 </div>
