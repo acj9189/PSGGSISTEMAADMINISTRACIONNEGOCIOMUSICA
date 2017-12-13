@@ -31,8 +31,10 @@ class crearCliente extends Controller
  		$cliente->telefono_Contacto =$phone;
  		$cliente->email = $email;
 
+ 		//dd($cc, $names, $lastnames, $phone, $email);
+
  		$cliente->save();
- 		return view('layouts.ordenServicio');
+ 		return view('paginas.crearCliente');
 
    }
 
