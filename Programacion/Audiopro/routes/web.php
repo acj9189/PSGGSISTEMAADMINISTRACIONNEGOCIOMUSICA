@@ -5,6 +5,7 @@ Route::get('EntradaArticulo', function () {
 Route::get('Audiopro', function () {
 	return view('layouts.LogIn');
 });
+
 Route::post('Audiopro','login@validar');
 Route::get('SalidaArticulo', function () {
 	return view('paginas.SalidaArticulo');
@@ -12,6 +13,11 @@ Route::get('SalidaArticulo', function () {
 Route::get('ordenServicio', function () {
 	return view('layouts.ordenServicio');
 });
+//crear roles
+Route::get('rol', function () {
+	return view('paginas.crearRoles');
+});
+Route::post('rol','login@regrol');
 //consultar estado articulo
 
 Route::get('consultarestado', function () {

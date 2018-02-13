@@ -30,7 +30,6 @@ class MigracionOrden extends Migration
             $table->date('fecha_Fin_Reparacion');
             $table->string('descripcion_Diagnostico', 500);
             $table->string('notas', 500);
-            $table->integer('costo_Reparacion',500);
 
         });
     }
