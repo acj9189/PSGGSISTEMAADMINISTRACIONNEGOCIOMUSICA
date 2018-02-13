@@ -13,7 +13,8 @@ public function mostrar (Request $request){
     2 ->por autorizar
     3 ->por reparar 
     4 ->en reparacion
-    5 ->reparado*/
+    5 ->reparado
+    6 ->rechazado*/
 		
 		$articulo = \DB::table('tarticulo')->get();
 		return view('paginas.consultar_articulos')->with('articulos', $articulo);

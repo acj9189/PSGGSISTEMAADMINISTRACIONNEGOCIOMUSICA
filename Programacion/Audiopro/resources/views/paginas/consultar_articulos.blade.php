@@ -79,7 +79,7 @@
     <div style="padding-left: 80px">
       <table border = 1>
         <tr>
-          <td style="padding-left: 80px">ID</td>
+          <td style="padding-left: 80px">Id</td>
           <td style="padding-left: 80px">Marca</td>
           <td style="padding-left: 80px">Tipo</td>
           

@@ -9,7 +9,7 @@ class diagnosticarArticulo extends Controller
 {
 	public function index(Request $request,$id,$estado = null){
 		if(!$estado){
-			$articulo = $orden = \DB::table('torden')->join('tarticulo','torden.idArticulo','=','tarticulo.idA')->
+			$articulo = \DB::table('torden')->join('tarticulo','torden.idArticulo','=','tarticulo.idA')->
 		join('tcliente','torden.idCliente','=','tcliente.idC')->select('*')-> where('idArticulo','=',$id)->get();
 			return view('paginas.diagnosticar')->with('articulo', $articulo);
 		}

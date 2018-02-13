@@ -6,14 +6,13 @@
 
 
 @section('form')
-<form action="salida/{ac}" name="salidaArticulo" id="salidaArticulo" method="get">
+<form name="EntradaArticulo" method="post">
     <table border="0">
       <tr> 
         <td><h6> Cédula(Nit):</h6></td>
-        <td><input type="text" id="ac" name="ac" size="30" value="{{ old('ac') }}" >
-        <button id="buscarOrden" name="buscarOrden" form="salidaArticulo"  >Buscar</button>
+        <td><input type="text" id="cc" name="cc" size="30"></td>
+        
       </tr>
-      </td>
       </table>
 </form>
 @stop
